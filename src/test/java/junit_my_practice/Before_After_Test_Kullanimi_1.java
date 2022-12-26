@@ -31,8 +31,7 @@ import java.time.Duration;
 //18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
 
 
-
-public class Test01 {
+public class Before_After_Test_Kullanimi_1 {
         static WebDriver driver;
         @BeforeClass
         public static void beforeClass() {

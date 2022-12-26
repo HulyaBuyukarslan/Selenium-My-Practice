@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Test02 {
+public class Before_After_Test_Kullanimi_2 {
 /* Given kullanici "https://editor.datatables.net/" sayfasina gider
     1-Then new butonuna basar
     2-And editor firstname kutusuna "<firstName>" bilgileri girer
