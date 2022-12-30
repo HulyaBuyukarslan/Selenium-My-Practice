@@ -58,6 +58,13 @@ public class Ornek_7 {
         public void tearDown() throws Exception {
             driver.close();
         }
-    }
+
+
+
+
+
+
+
+}
 
 
