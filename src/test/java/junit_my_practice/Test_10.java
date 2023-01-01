@@ -37,5 +37,21 @@ public class Test_10 extends TestBase{
             Assert.assertTrue(gorunum2.isDisplayed());
             //11. Click 'Home'  button and verify that landed to home page successfully
             //bu asamada reklam cıktıgı ıcın devam edemedik.yapan arkadaslar paylasabılır..
+            Thread.sleep(3000);
+            driver.switchTo().frame(1);
+            driver.findElement(By.xpath("(//*[@id='cbb'])[1]")).click();
+            driver.switchTo().defaultContent();
+
+            driver.findElement(By.xpath("//*[@class='btn btn-success']")).click();
+            Thread.sleep(3000);
+            driver.navigate().back();
+            driver.findElement(By.xpath("//*[@class='btn btn-success']")).click();
+            WebElement anasayfaTekrar = driver.findElement(By.xpath("//html"));
+            Assert.assertTrue(anasayfaTekrar.isDisplayed());
+
+
+
+
+
         }
     }
