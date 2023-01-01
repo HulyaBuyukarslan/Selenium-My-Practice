@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
 
-public class Test_10 extends TestBase {
+public class Ornek_10 extends TestBase {
 
          @Test
         public void test01() throws IOException, InterruptedException {
