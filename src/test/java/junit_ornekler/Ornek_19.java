@@ -1,11 +1,12 @@
-package junit_my_practice;
+package junit_ornekler;
 
+import junit_my_practice.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Ornek_19 extends TestBase{
+public class Ornek_19 extends TestBase {
 
     @Test
     public void test1() throws InterruptedException {

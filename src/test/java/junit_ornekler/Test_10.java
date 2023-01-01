@@ -1,4 +1,5 @@
-package junit_my_practice;
+package junit_ornekler;
+import junit_my_practice.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -6,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
 
-public class Test_10 extends TestBase{
+public class Test_10 extends TestBase {
 
          @Test
         public void test01() throws IOException, InterruptedException {

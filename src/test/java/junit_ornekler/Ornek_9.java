@@ -1,10 +1,11 @@
-package junit_my_practice;
+package junit_ornekler;
+import junit_my_practice.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
 
-public class Ornek_9 extends TestBase{
+public class Ornek_9 extends TestBase {
 
 /*
 1- go to url :http://demo.automationtesting.in/Alerts.html

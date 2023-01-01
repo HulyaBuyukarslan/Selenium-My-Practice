@@ -1,4 +1,4 @@
-package junit_my_practice;
+package junit_ornekler;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
