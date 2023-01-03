@@ -26,6 +26,7 @@ public class HandleWindows_1 extends TestBase {
 
         WebDriver yeniWindow = driver.switchTo().newWindow(WindowType.TAB);
         Thread.sleep(1000);
+        // driver.get("https://www.techproeducation.com");
         yeniWindow.navigate().to("https://www.techproeducation.com");
 
         //5-Sayfa title’nin “Techpro Education” icerdigini test edin
@@ -34,9 +35,10 @@ public class HandleWindows_1 extends TestBase {
         Assert.assertTrue(actualTitle2.contains(expectedTitle2));
 
         //6-Yeni bir window olusturup, acilan sayfada walmart.com adresine gidin
-        WebDriver yeniWindow2 = driver.switchTo().newWindow(WindowType.TAB);
+        WebDriver yeniWindow2 = driver.switchTo().newWindow(WindowType.WINDOW);
         Thread.sleep(1000);
-        yeniWindow.navigate().to("https://www.walmart.com");
+       // driver.get("https://www.walmart.com");
+        yeniWindow2.navigate().to("https://www.walmart.com");
 
         //7-Sayfa title’nin “Walmart” icerdigini test edin
         String actualTitle3  = driver.getTitle();

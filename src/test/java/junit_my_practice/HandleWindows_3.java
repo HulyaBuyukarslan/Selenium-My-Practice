@@ -7,9 +7,7 @@ import org.openqa.selenium.By;
 import java.util.Set;
 
 public class HandleWindows_3 extends TestBase{
-
-
-    @Test
+  @Test
     public void test1() throws InterruptedException {
          // 1-https://testcenter.techproeducation.com/index.php?page=multiple-windows
         driver.get("https://testcenter.techproeducation.com/index.php?page=multiple-windows");

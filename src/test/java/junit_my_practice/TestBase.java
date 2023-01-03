@@ -7,8 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.Set;
 
-    public abstract class TestBase {
+public abstract class TestBase {
         //    driver objesini olustur. Driver ya public yada protected olmali.
         //    Sebebi child classlarda gorulebilir olmasi
         protected static WebDriver driver;
@@ -25,5 +26,20 @@ import java.time.Duration;
         public void tearDown(){
          //   driver.quit();
         }
+
+  public static void handleWindows (){
+       String ilkPencere = driver.getWindowHandle();
+       Set<String> butunPencereler = driver.getWindowHandles();
+       for (String w : butunPencereler){
+           if (!w.equals(ilkPencere)){
+               driver.switchTo().window(w);
+               break;
+
+           }
+       }
+
+    }
+
+
     }
 

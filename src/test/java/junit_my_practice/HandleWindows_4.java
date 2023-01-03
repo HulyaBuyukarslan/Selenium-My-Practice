@@ -3,6 +3,7 @@ package junit_my_practice;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WindowType;
 
 import java.util.Set;
 
@@ -28,13 +29,17 @@ public class HandleWindows_4 extends TestBase{
 
 
         // 5-Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-        Set<String> butunPencereler = driver.getWindowHandles();
-        for (String w : butunPencereler){
-            if (!w.equals(pencere1)){
-                driver.switchTo().window(w);
-                break;
-            }
-        }
+//        Set<String> butunPencereler = driver.getWindowHandles();
+//        for (String w : butunPencereler){
+//            if (!w.equals(pencere1)){
+//                driver.switchTo().window(w);
+//                break;
+//            }
+//        }
+       handleWindows();
+
+        // driver.switchTo().newWindow(WindowType.TAB);
+
         String sayfaBasligi2 =  driver.getTitle();
         String istenenBaslik2 = "New Window";
         Assert.assertEquals(istenenBaslik2,sayfaBasligi2);

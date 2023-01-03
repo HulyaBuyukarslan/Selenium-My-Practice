@@ -9,8 +9,7 @@ import java.util.Set;
 
 public class HandleWindows_2 extends TestBase{
 
-
-    @Test
+  @Test
     public void test1() {
         // 1- url'ye git: http://demo.guru99.com/popup.php
         driver.get("http://demo.guru99.com/popup.php");
@@ -19,14 +18,17 @@ public class HandleWindows_2 extends TestBase{
         // 3- "Click Here" butonuna tıklayın
         driver.findElement(By.xpath("//*[text()='Click Here']")).click();
         // 4- setteki tüm pencereyi al
-        Set<String> tumPencereler =   driver.getWindowHandles();
-        //  5- diğer pencereye geç
-        for(String w : tumPencereler){
-            if (!w.equals(ilkPencere)){
-                driver.switchTo().window(w);
-                break;
-            }
-        }
+        // 5- diğer pencereye geç
+//          Set<String> tumPencereler =   driver.getWindowHandles();
+//          for(String w : tumPencereler){
+//            if (!w.equals(ilkPencere)){
+//                driver.switchTo().window(w);
+//                break;
+//            }
+//        }
+
+
+      handleWindows();
        // 6- e-posta kimliğini (somepne@gmail.com) girin ve bu girişe bir şey yazın
         driver.findElement(By.xpath("//*[@name='emailid']")).sendKeys("somepne@gmail.com");
         // 7- Gönder düğmesine tıklayarak
