@@ -21,7 +21,7 @@ public abstract class TestBase {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         }
-        //    tearDown
+        //   tearDown
         @After
         public void tearDown(){
          //   driver.quit();
