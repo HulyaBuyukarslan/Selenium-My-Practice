@@ -50,5 +50,6 @@ public class HandleWindows_1 extends TestBase {
         driver.switchTo().window(window1);
         Assert.assertTrue(driver.getCurrentUrl().contains("amazon.com"));
 
+
     }
 }
