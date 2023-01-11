@@ -2,7 +2,7 @@ package junit_my_practice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
+
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class HandleIframe_2 extends TestBase {
 
      */
 
-    @Test
+
         public void test01() throws InterruptedException {
             //1) http://demo.guru99.com/test/guru99home/ sitesine gidiniz
             driver.get("http://demo.guru99.com/test/guru99home/");

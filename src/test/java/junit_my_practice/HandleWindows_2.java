@@ -27,7 +27,7 @@ public class HandleWindows_2 extends TestBase{
 //            }
 //        }
 
-      handleWindows();
+    //  handleWindows();
        // 6- e-posta kimliğini (somepne@gmail.com) girin ve bu girişe bir şey yazın
         driver.findElement(By.xpath("//*[@name='emailid']")).sendKeys("somepne@gmail.com");
         // 7- Gönder düğmesine tıklayarak

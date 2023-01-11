@@ -36,7 +36,7 @@ public class HandleWindows_4 extends TestBase{
 //                break;
 //            }
 //        }
-       handleWindows();
+      // handleWindows();
 
         // driver.switchTo().newWindow(WindowType.TAB);
 
