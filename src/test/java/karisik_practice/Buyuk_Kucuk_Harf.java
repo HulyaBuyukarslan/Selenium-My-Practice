@@ -1,0 +1,20 @@
+package karisik_practice;
+
+import junit_my_practice.TestBase;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
+public class Buyuk_Kucuk_Harf extends TestBase {
+    @Test
+    public void name() {
+        //google sayfasına gidelim
+        driver.get("https://google.com");
+        //Büyük küçük harf olucak şekilde HeLlO yazdıralım
+        WebElement searchBox = driver.findElement(By.xpath("//*[@class='gLFyf']"));
+        searchBox.sendKeys(Keys.SHIFT,"h", Keys.SHIFT,"e",Keys.SHIFT,"l",Keys.SHIFT,"l",Keys.SHIFT,"o",Keys.SHIFT);
+
+
+    }
+}

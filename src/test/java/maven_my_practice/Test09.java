@@ -1,66 +1,49 @@
 package maven_my_practice;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.*;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Test09 {
 
-
-        //BeforeClass ile driver ı olusturun ve
-        //Maximize edin, 15 sn bekletin
-        //http://www.google.com adresine gidin
-        //arama kutusuna "The God Father" yazip, cikan sonuc sayisini yazdirin
-        //arama kutusuna  "Lord of the Rings" yazip, cikan sonuc sayisini yazdirin
-        //arama kutusuna  "Kill Bill" yazip, cikan sonuc sayisini yazdirin
-        //AfterClass ile kapatın
-        static WebDriver driver;
-
-        @BeforeClass
-        public static void beforeClass() {
+    public static void main(String[] args) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            WebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }
+            // http://the-internet.herokuapp.com/add_remove_elements/ adresine gidiniz
+            driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
 
-        @Before
-        public void setUp() {
-            driver.get("http://www.google.com");
-        }
+            // Add Element butonuna 100 defa basınız
+            WebElement addButton = driver.findElement(By.xpath("//*[@onclick='addElement()']"));
 
-        @Test
-        public void test01() {
-            WebElement aramaKutusu = driver.findElement(By.xpath("//*[@class='gLFyf']"));
-            aramaKutusu.sendKeys("The God Father", Keys.ENTER);
-        }
+            for (int i = 0; i < 100; i++) {
+                addButton.click();
+            }
 
-        @Test
-        public void test02() {
-            WebElement aramaKutusu = driver.findElement(By.xpath("//*[@class='gLFyf']"));
-            aramaKutusu.sendKeys("Lord of the Rings", Keys.ENTER);
-        }
+            // 100 defa basıldığını test ediniz
+            List<WebElement> deleteButton = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
+            Assert.assertEquals(100,deleteButton.size());
 
-        @Test
-        public void test03() {
-            WebElement aramaKutusu = driver.findElement(By.xpath("//*[@class='gLFyf']"));
-            aramaKutusu.sendKeys("Kill Bill", Keys.ENTER);
-        }
+            // 90 defa delete butonuna basınız
 
-        @After
-        public void tearDown() {
-            String [] sonuc = driver.findElement(By.xpath("//*[@id='result-stats']")).getText().split(" ");
-            System.out.println("Arama Sonuc Sayısı = "+sonuc[1]);
-        }
+            for (int i = 0; i < 90; i++) {
+                driver.findElement(By.xpath("//*[@onclick='deleteElement()']")).click();
+            }
 
-        @AfterClass
-        public static void afterClass() throws Exception {
+
+            // 90 defa basıldığını doğrulayınız
+            List<WebElement> deleteButtonList = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
+            int kalanDeleteButton = deleteButton.size()-90;
+            Assert.assertEquals(kalanDeleteButton,deleteButtonList.size());
+
+            // Sayfayı kapatınız
             driver.close();
         }
+
     }
